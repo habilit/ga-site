@@ -1,0 +1,39 @@
+.loading {
+  margin: auto;
+  display: block;
+  width: fit-content;
+}
+
+.table {
+  width: 100%;
+}
+
+.column {
+  background-color: #eee;
+  height: 30px;
+  padding-left: 10px;
+}
+
+.content-row {
+  float: left;
+  width: 100%;
+
+}
+
+.content-row div {
+  float: left;
+}
+
+.table {
+  float: left;
+}
+
+.header {
+  float: left;
+  width: 100%;
+}
+
+.id-column, .title-column {
+  width: 50%;
+  float: left;
+}
