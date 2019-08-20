@@ -22,9 +22,9 @@ class App extends Component {
     };
 
     initializeReactGA = () => {
-        console.log('initializeReactGA');
-        ReactGA.initialize('UA-145774534-1');
-        addCurrentUrltoGA();
+        console.log('initializeReactGA UA-145774534-2');
+        ReactGA.initialize('UA-145774534-2');
+        // addCurrentUrltoGA();
     };
 
     render = () => {
