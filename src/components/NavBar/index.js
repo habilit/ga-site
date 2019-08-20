@@ -4,7 +4,8 @@ import Nav from 'react-bootstrap/Nav';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
-import { Link } from "react-router-dom";
+import {Link, Route} from "react-router-dom";
+import ContactPage from "../../containers/ContactPage";
 
 class NavBar extends Component {
     render() {
@@ -14,6 +15,8 @@ class NavBar extends Component {
                 <Nav className="mr-auto">
                     <Nav.Link href="#home"><Link to="/">Home</Link></Nav.Link>
                     <Nav.Link href="#topic"><Link to="/pageDetail">Page Detail</Link></Nav.Link>
+                    <Nav.Link href="#topic"><Link to="/contact">Contact</Link></Nav.Link>
+                    <Nav.Link href="#story"><Link to="/story">Story</Link></Nav.Link>
                 </Nav>
                 <Form inline>
                     <FormControl type="text" placeholder="Search" className="mr-sm-2" />

@@ -11,3 +11,4 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const databaseRef = firebase.database().ref();
 export const todosRef = databaseRef.child("todos");
+export const contactsRef = databaseRef.child("contacts");

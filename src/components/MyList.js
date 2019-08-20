@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Loader from 'react-loader-spinner'
+import ReactGA from 'react-ga';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
@@ -22,6 +23,10 @@ class MyList extends Component {
     formSubmit = e => {
         const {formValue} = this.state;
         const {addToDo} = this.props;
+        ReactGA.event({
+            category: 'Todo',
+            action: 'Create an Todo'
+        });
         e.preventDefault();
         addToDo({title: formValue});
         this.setState({formValue: ""});
