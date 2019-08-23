@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactGA from 'react-ga';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Router, Route } from 'react-router-dom';
+import { browserHistory } from 'react-router';
 import { addCurrentUrltoGA } from './utils/GAutil';
 import { simpleAction } from './actions/simpleAction';
 import Home from './containers/Home';
+import createBrowserHistory from 'history/createBrowserHistory';
 import DetailPage from './containers/DetailPage';
 import ContactPage from './containers/ContactPage';
 import StoryPage from './containers/StoryPage';
@@ -12,6 +14,8 @@ import ContactDetail from './containers/ContactDetail';
 import './App.css';
 import {fetchToDos} from "./actions/todoAction";
 import NavBar from './components/NavBar';
+
+var history = createBrowserHistory();
 
 class App extends Component {
     simpleAction = (event) => {
@@ -26,12 +30,14 @@ class App extends Component {
     initializeReactGA = () => {
         console.log('initializeReactGA UA-145774534-2');
         ReactGA.initialize('UA-145774534-2');
-        addCurrentUrltoGA();
+        history.listen(function () {
+            addCurrentUrltoGA();
+        });
     };
 
     render = () => {
         return (
-            <Router>
+            <Router history={history}>
                 <div>
                     <NavBar />
                     <Route exact path="/" component={Home}/>

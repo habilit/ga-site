@@ -24,7 +24,6 @@ const contacts = (state = defaultData, action) => {
         case 'TOGGLE_TODO':
             return state.map(todo => todo.id === action.id ? { ...todo, completed: !todo.completed } : todo);
         case CONTACT_ACTIONS.FETCH_CONTACTS :
-            console.log('FETCH_CONTACTS');
             return {
                 ...state,
                 isFetching: false,
