@@ -29,7 +29,7 @@ class App extends Component {
 
     initializeReactGA = () => {
         console.log('initializeReactGA UA-145774534-2');
-        ReactGA.initialize('UA-145774534-2');
+        ReactGA.initialize('UA-145774534-3');
         history.listen(function () {
             addCurrentUrltoGA();
         });
